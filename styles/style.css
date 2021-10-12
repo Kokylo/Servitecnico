@@ -1,5 +1,18 @@
-body {
-    background: #EECDA3;
-    background: -webkit-linear-gradient(to top, #7c62ef, #EECDA3);
-    background: linear-gradient(to top, #7c62ef, #EECDA3);
+.claseo1 {
+    color: rgb(43, 226, 83);
+    font-weight: bold;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.claseo2 {
+    color: rgb(228, 13, 13);
+    font-weight: bold;
+    font-size: smaller;
+}
+
+h4 {
+    color: blue;
+    background-color: crimson;
+    border: 1px solid black;
 }

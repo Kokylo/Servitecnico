@@ -1,0 +1,99 @@
+﻿<html class="no-js" lang="en">
+
+<head>
+    <title> CREACION EQUIPO</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"></link>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+
+    <style>
+        body {
+            background: #EECDA3;
+            background: -webkit-linear-gradient(to top, #7c62ef, #757575);
+            background: linear-gradient(to top, #7c62ef, #EECDA3);
+        }
+        
+        .container {
+            max-width: 70%;
+        }
+        
+        .has-error label,
+        .has-error input,
+        .has-error textarea {
+            color: red;
+            border-color: red;
+        }
+        
+        .list-unstyled li {
+            font-size: 13px;
+            padding: 4px 0 0;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <h5 class="card-header text-center">CREACIÓN EQUIPO</h5>
+            <div class="card-body">
+                <form role="form" data-toggle="validator">
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" data-error="Es necesario un ID para el equipo" id="idequipo" placeholder="ID equipo" required>
+
+                        <!-- Error -->
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" data-error="A quien pertenezca el equipo" id="idowner" placeholder="ID propietario" required>
+
+                        <!-- Error -->
+                        <div class="help-block with-errors"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>PESO</label>
+                        <div class="input-group mb-4">
+                            <input type="radio" class="btn-check" name="btnradio" id="btncheck1" autocomplete="off">
+                            <label class="btn btn-link" for="btncheck1" id="gr" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gramo">g</label>
+                            <input type="radio" class="btn-check" name="btnradio" id="btncheck2" autocomplete="off">
+                            <label class="btn btn-link" for="btncheck2" id="kgr" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Kilogramo">Kg</label>
+                            <input type="number" class="form-control" id="peso" placeholder="Ingrese el peso" aria-label="peso" data-error="Ingrese el peso del equipo" required>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>DIMENSIONES</label>
+                        <div class="input-group mb-4">
+                            <input type="radio" class="btn-check" name="btnradio" id="btncheck1" autocomplete="off">
+                            <label class="btn btn-link" for="btncheck1" id="cm" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Centimetros">cm</label>
+                            <input type="radio" class="btn-check" name="btnradio" id="btncheck2" autocomplete="off">
+                            <label class="btn btn-link" for="btncheck2" id="m" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Metros">m</label>
+                            <input type="number" class="form-control" id="alto" placeholder="Alto" aria-label="alto" data-error="Ingrese las dimensiones" required>
+                            <input type="number" class="form-control" id="ancho" placeholder="Ancho" aria-label="ancho" data-error="Ingrese las dimensiones" required>
+                            <input type="number" class="form-control" id="prof" placeholder="Profundo" aria-label="prof" data-error="Ingrese las dimensiones" required>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Observaciones</label>
+                        <textarea class="form-control" data-error="Ingrese una breve descripción" id="inputMessage" placeholder="Descripcion del equipo" required=""></textarea>
+
+                        <!-- Error -->
+                        <div class="help-block with-errors"></div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Registrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

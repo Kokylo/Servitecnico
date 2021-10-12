@@ -2,6 +2,17 @@ var ingr = document.getElementById("ingreso");
 var creat = document.getElementById("creacion");
 creat.hidden = true;
 
+function natur() {
+    var juridica =
+        document.getElementById("btncheck1");
+    var natural =
+        document.getElementById("btncheck2");
+    if (juridica.checked)
+        document.getElementById("apellido").disabled = true;
+    if (natural.checked)
+        document.getElementById("apellido").disabled = false;
+}
+
 function hider() {
     if (ingr.hidden == true)
         ingr.hidden = false;
@@ -22,9 +33,9 @@ function validator() {
     var perso =
         document.getElementsByName("btnradio");
     var name =
-        document.getElementById("nombreC");
-    var docu =
-        document.getElementsByName("btnradio2");
+        document.getElementById("nombre");
+    var ape =
+        document.getElementById("apellido")
     var identi =
         document.getElementById("identif");
     var pass1 =
@@ -52,14 +63,10 @@ function validator() {
         i = 1;
     } else name.style.backgroundColor = "#FFFFFFFF";
 
-    if (docu[0].checked || docu[1].checked) {
-        document.getElementById("nit").style.color = "#ffffff";
-        document.getElementById("cedu").style.color = "#ffffff";
-    } else {
+    if (ape.value == "" && ape.disabled == false) {
+        ape.style.backgroundColor = "#FF040446";
         i = 1;
-        document.getElementById("nit").style.color = "red";
-        document.getElementById("cedu").style.color = "red";
-    }
+    } else ape.style.backgroundColor = "#FFFFFFFF";
 
     if (identi.value == "") {
         identi.style.backgroundColor = "#FF040446";
@@ -71,7 +78,7 @@ function validator() {
         i = 1;
     } else pass1.style.backgroundColor = "#FFFFFFFF";
 
-    if (pass2.value == "") {
+    if (pass2.value != pass1.value || pass2.value == "") {
         pass2.style.backgroundColor = "#FF040446";
         i = 1;
     } else pass2.style.backgroundColor = "#FFFFFFFF";
@@ -95,7 +102,9 @@ function validator() {
         window.alert("No deje espacios sin diligenciar.");
         return false;
     } else {
+        window.alert("El usuario ha sido creado con exito.");
         i = 0;
+        window.location.reload();
         return true;
     }
 
